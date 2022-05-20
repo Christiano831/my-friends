@@ -1,6 +1,6 @@
 # My Friends
 
-Facebook type of replica
+Facebook/Myspace type of replica
 
 ## About
 
