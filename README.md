@@ -1,37 +1,60 @@
-## Setup 
+# My Friends
 
-1. Clone the repo
-2. Rename the folder to your Project, you can use the `mv` command like `mv mern-boilerplate yourprojectname`
-3. Delete the `.git` file, when you are in the root of the file, you can press `ls` and you should see a `.git` file, then go ahead and run `rm -rf .git`
+Facebook type of replica
 
+## About
 
-#### Setup your git repo
+This is the third project assigned by General Assembly: Software Engineering Immersive program. We are using what we learned in React and combining it with MongoDB, Express, and Node to create a full-stack MERN application.
 
-1. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
-2. Then you can run the following commands in the root of your project 
+## Heroku Link
 
-```
-git init
-git add .
-git commit -m "first commit"
-git remote add origin git@git.generalassemb.ly:SEI-CC/test.git // this will be whatever your address will be, look at the address in the code github gives you!
-git push -u origin main
-```
+Insert Link here
 
-#### Setup the App
+##  Technologies Used
 
-```npm install```
+* MongoDB
+* Express
+* React
+* Node
+* HTML/CSS
+* JavaScript
 
-*DOTENV*
+## Minimal Viable Product
 
-`touch .env`
+* User Profile Section
+* User able to upload a blog
+* Add a section where you can view everyone's blogs or only a specific user's blogs
+* Users able to comment on blog
+* Users able to like a blog
+* User able to switch from blog section to user profile section
 
-add your variables
+## User Stories
 
-```
-DATABASE_URL=mongodb://localhost:27017/testagramV2
-BUCKET_NAME=catcollectorone
-SECRET=mysecretforjwt
-```
+* AAU I want to be able to view everyone's post
+* AAU I want to be able to upload a blog
+* AAU I want to be able to comment
+* AAU I want to be able to delete a post(blog, picture, comment, like. etc...)
+* AAU I want to have a profile section
+* AAU I want to be able to like a blog or picture
+* AAU I want to be able to upload a picture
+* AAU I want to be able to upload a video
+* AAU I want to be able to add friends and view their profiles
+* AAU I want to be able to customize my profile
 
-The app is configured, to use those respective key names for the database, jwt secret and aws bucket, of course you'll have your own values
+## Trello Board Link
+
+https://trello.com/b/4g0CmLCU/my-friends-app
+
+## Entity Relationship Diagram
+
+![ERD Screenshot](https://i.imgur.com/fYx9hTL.png)
+
+## Wireframes
+
+![Wireframe Screenshot](https://i.imgur.com/vO7oqaJ.png)
+
+## Ice Box
+
+* Ability to add users as friends to view friends' uploads
+* Add same features as blog but for a picture upload section
+* Add same features as blog but for a short video upload section
