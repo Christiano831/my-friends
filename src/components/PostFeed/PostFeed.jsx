@@ -21,8 +21,8 @@ export default function PostFeed({posts, numPhotosCol, isProfile, loading, addLi
               post={post}
               key={post._id}
               isProfile={isProfile}
-            //   addLike={addLike}
-            //   removeLike={removeLike}
+              addLike={addLike}
+              removeLike={removeLike}
               user={user}
             />
           );

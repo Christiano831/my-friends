@@ -6,6 +6,7 @@ import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Loading from "../../components/Loader/Loader";
 import PostFeed from "../../components/PostFeed/PostFeed";
 import * as postsAPI from "../../utils/postApi";
+import * as likesAPI from '../../utils/likeApi';
 
 import {  Grid } from 'semantic-ui-react'
 
@@ -17,28 +18,28 @@ export default function Feed({user, handleLogout}) {
     const [error, setError] = useState("");
   
   
-    // async function addLike(postId){
-    //   try {
-    //     const data = await likesAPI.create(postId)
-    //     console.log(data, ' <- the response from the server when we make a like');
-    //     getPosts(); // <- to go get the updated posts with the like
-    //   } catch(err){
-    //     console.log(err)
-    //     setError(err.message)
-    //   }
-    // }
+    async function addLike(postId){
+      try {
+        const data = await likesAPI.create(postId)
+        console.log(data, ' <- the response from the server when we make a like');
+        getPosts(); // <- to go get the updated posts with the like
+      } catch(err){
+        console.log(err)
+        setError(err.message)
+      }
+    }
   
-    // async function removeLike(likeId){
-    //   try {
-    //     const data = await likesAPI.removeLike(likeId);
-    //     console.log(data, '<-  this is the response from the server when we remove a like')
-    //     getPosts()
+    async function removeLike(likeId){
+      try {
+        const data = await likesAPI.removeLike(likeId);
+        console.log(data, '<-  this is the response from the server when we remove a like')
+        getPosts()
         
-    //   } catch(err){
-    //     console.log(err);
-    //     setError(err.message);
-    //   }
-    // }
+      } catch(err){
+        console.log(err);
+        setError(err.message);
+      }
+    }
   
   
   
@@ -120,8 +121,8 @@ export default function Feed({user, handleLogout}) {
               numPhotosCol={1}
               isProfile={false}
               loading={loading}
-            //   addLike={addLike}
-            //   removeLike={removeLike}
+              addLike={addLike}
+              removeLike={removeLike}
               user={user}
             />
           </Grid.Column>
