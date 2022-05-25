@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Feed from "../Feed/Feed";
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
 import userService from "../../utils/userService";
@@ -22,7 +23,7 @@ function App() {
   if (user) {
     return (
       <Routes>
-        <Route path="/" element={<h1>This is Home Page!</h1>} />
+        <Route path="/" element={<Feed />} />
         <Route
           path="/login"
           element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
