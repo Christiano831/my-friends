@@ -44,7 +44,7 @@ export default function AddPuppyForm(props){
                   className="form-control"
                   name="caption"
                   value={state.caption}
-                  placeholder="What's on your pups mind?"
+                  placeholder="Caption your photo"
                   onChange={handleChange}
                   required
               />   
@@ -59,7 +59,7 @@ export default function AddPuppyForm(props){
                 type="submit"
                 className="btn"
               >
-                ADD PUPPY
+                ADD PHOTO
               </Button>
             </Form>
           </Segment>
