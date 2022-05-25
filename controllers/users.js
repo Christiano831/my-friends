@@ -12,7 +12,7 @@ module.exports = {
 };
 
 function signup(req, res) {
-  console.log(req.body, req.file);
+  console.log(req.body, '<-------req.body', req.file, '<--------req.file');
 
   //////////////////////////////////////////////////////////////////////////////////
   //////////////////////////////////////////////////////////////////////////////////
@@ -29,7 +29,9 @@ function signup(req, res) {
   //////////////////////////////////////////////////////////////////////////////////
   s3.upload(params, async function (err, data) {
     console.log(data, "from aws"); // data.Location is our photoUrl that exists on aws
+    console.log(err, "eeeeeeeeeeeeeeeeerrroororororooror");
     const user = new User({ ...req.body, photoUrl: data.Location });
+    console.log(err, "eeeeeeeeeeeeeeeeerrroororororooror");
     try {
       await user.save();
       const token = createJWT(user); // user is the payload so this is the object in our jwt
