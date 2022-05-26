@@ -47,7 +47,7 @@ https://trello.com/b/4g0CmLCU/my-friends-app
 
 ## Entity Relationship Diagram
 
-![ERD Screenshot](https://i.imgur.com/fYx9hTL.png)
+![ERD Screenshot](https://i.imgur.com/rS6V4Rw.png)
 
 ## Wireframes
 
