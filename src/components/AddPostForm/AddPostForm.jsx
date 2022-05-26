@@ -54,6 +54,7 @@ export default function AddPuppyForm(props){
                 name="photo"
                 placeholder="upload image"
                 onChange={handleFileInput}
+                required
               />   
               <Button
                 type="submit"
