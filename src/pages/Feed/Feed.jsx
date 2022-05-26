@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import PageHeader from "../../components/Header/Header";
 import AddPostForm from "../../components/AddPostForm/AddPostForm";
@@ -12,7 +12,7 @@ import {  Grid } from 'semantic-ui-react'
 
 
 export default function Feed({user, handleLogout}) {
-    console.log(postsAPI, " <-- postsAPI")
+    // console.log(postsAPI, " <-- postsAPI")
     const [posts, setPosts] = useState([]); // <- likes are inside of the each post in the posts array
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
@@ -65,7 +65,7 @@ export default function Feed({user, handleLogout}) {
     async function getPosts() {
       try {
         const data = await postsAPI.getAll();
-        console.log(data, " this is data,");
+        // console.log(data, " this is data,");
         setPosts([...data.posts]);
         setLoading(false);
       } catch (err) {
