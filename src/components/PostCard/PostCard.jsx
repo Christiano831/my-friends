@@ -1,4 +1,5 @@
 import React from "react";
+import AddPostCommentForm from "../AddPostCommentForm/AddPostCommentForm";
 import { Card, Icon, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 function PostCard({ post, isProfile, removeLike, addLike, user }) {
@@ -49,6 +50,9 @@ function PostCard({ post, isProfile, removeLike, addLike, user }) {
           onClick={clickHandler}
         />
         {post.likes.length} Likes
+      </Card.Content>
+      <Card.Content extra textAlign={"left"}>
+      <AddPostCommentForm />
       </Card.Content>
     </Card>
   );

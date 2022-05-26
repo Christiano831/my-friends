@@ -5,13 +5,22 @@ const likesSchema = mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId }
 })
 
-// A post has many likes, a like belongs to a POST
+const postsCommentsSchema = mongoose.Schema({
+  username: String,
+  userId: { type: mongoose.Schema.Types.ObjectId },
+  text: {
+    type: String,
+    required: true
+  }
+})
+
 const postSchema = new mongoose.Schema({
-    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User'}, // referencing a model
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
     photoUrl: String,
     caption: String,
     blog: String,
-    likes: [likesSchema] // embedded schema
+    likes: [likesSchema],
+    comments: [postsCommentsSchema],
   })
  
 
