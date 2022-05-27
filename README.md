@@ -4,11 +4,11 @@ Facebook/Myspace type of replica
 
 ## About
 
-This is the third project assigned by General Assembly: Software Engineering Immersive program. We are using what we learned in React and combining it with MongoDB, Express, and Node to create a full-stack MERN application.
+This is the fourth project assigned by General Assembly: Software Engineering Immersive program. We are using what we learned in React and combining it with MongoDB, Express, and Node to create a full-stack MERN application.
 
 ## Heroku Link
 
-Insert Link here
+https://myfriends-cj.herokuapp.com/
 
 ##  Technologies Used
 
