@@ -2,6 +2,8 @@ import React, { useState, useRef } from "react";
 import cn from "classnames";
 import dynamicHeight from "./dynamicHeight";
 import "./AddPostCommentForm.css";
+import { Link } from "react-router-dom";
+import { Image } from "semantic-ui-react";
 
 const INITIAL_HEIGHT = 46;
 
@@ -9,9 +11,12 @@ const INITIAL_HEIGHT = 46;
  * Read the blog post here:
  * https://letsbuildui.dev/articles/how-to-build-an-expandable-comment-box
  */
-export default function CommentBox() {
+export default function CommentBox( post, isProfile, user, props ) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [commentValue, setCommentValue] = useState("");
+  const [state, setState] = useState({
+    caption: ''
+  })
 
   const outerHeight = useRef(INITIAL_HEIGHT);
   const textRef = useRef(null);
@@ -34,9 +39,19 @@ export default function CommentBox() {
     setIsExpanded(false);
   };
 
+//   function handleChange(e){
+//     setState({
+//       ...state,
+//       [e.target.name]: e.target.value
+//     })
+//   }
+
   const onSubmit = (e) => {
     e.preventDefault();
     console.log("send the form data somewhere");
+    const formData = new FormData()
+    formData.append('caption', state.caption)
+    props.handleAddPostComment({comment: state.comment}); 
   };
 
   return (
@@ -55,10 +70,9 @@ export default function CommentBox() {
       >
         <div className="header">
           <div className="user">
-            <img
-              src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/df/df7789f313571604c0e4fb82154f7ee93d9989c6.jpg"
-              alt="User avatar"
-            />
+            <Link to={`/${user?.username}`}>
+                <Image key={post._id} src={`${post.photoUrl}`} wrapped ui={false} />
+            </Link>
             <span>User Name</span>
           </div>
         </div>
@@ -78,7 +92,7 @@ export default function CommentBox() {
           <button type="button" className="cancel" onClick={onClose}>
             Cancel
           </button>
-          <button type="submit" disabled={commentValue.length < 1}>
+          <button type="submit" disabled={commentValue.length < 1} >
             Respond
           </button>
         </div>

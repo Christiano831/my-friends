@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Button, Form, Grid, Segment } from 'semantic-ui-react'
 
-export default function AddPuppyForm(props){
+export default function AddPicForm(props){
   const [selectedFile, setSelectedFile] = useState('')
   const [state, setState] = useState({
     caption: ''

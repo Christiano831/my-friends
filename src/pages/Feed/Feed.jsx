@@ -7,6 +7,7 @@ import Loading from "../../components/Loader/Loader";
 import PostFeed from "../../components/PostFeed/PostFeed";
 import * as postsAPI from "../../utils/postApi";
 import * as likesAPI from '../../utils/likeApi';
+import * as postCommentsAPI from '../../utils/postCommentsApi';
 
 import {  Grid } from 'semantic-ui-react'
 
@@ -36,6 +37,21 @@ export default function Feed({user, handleLogout}) {
         getPosts()
         
       } catch(err){
+        console.log(err);
+        setError(err.message);
+      }
+    }
+
+    async function handleAddPostComment(post) {
+      try {
+        setLoading(true);
+        const data = await postCommentsAPI.create(post); // our server is going to return
+        // the created post, that will be inside of data, which is the response from
+        // the server, we then want to set it in state
+        console.log(data, " this is response from the server, in handleAddPost");
+        setPosts([data.post, ...posts]);
+        setLoading(false);
+      } catch (err) {
         console.log(err);
         setError(err.message);
       }
@@ -124,6 +140,7 @@ export default function Feed({user, handleLogout}) {
               addLike={addLike}
               removeLike={removeLike}
               user={user}
+              handleAddPostComment={handleAddPostComment}
             />
           </Grid.Column>
         </Grid.Row>

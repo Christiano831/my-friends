@@ -2,6 +2,7 @@ import React from "react";
 import AddPostCommentForm from "../AddPostCommentForm/AddPostCommentForm";
 import { Card, Icon, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+
 function PostCard({ post, isProfile, removeLike, addLike, user }) {
 
   const likeIndex = post.likes.findIndex(
